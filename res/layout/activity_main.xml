@@ -19,7 +19,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="33dp"
         android:layout_marginTop="38dp"
-        android:text="TextView" />
+        android:text="tituleishon" />
 
     <ImageView
         android:id="@+id/imagen"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/titulo"
         android:layout_centerVertical="true"
-        android:text="TextView" />
+        android:text="punteishon" />
     <Button
         android:id="@+id/getdata"
         android:layout_width="wrap_content"

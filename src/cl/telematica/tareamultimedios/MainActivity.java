@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 
@@ -26,7 +27,7 @@ public class MainActivity extends Activity {
 	  //URL to get JSON Array
 	  private static String url = "http://www.mocky.io/v2/5440667984d353f103f697c0";
 	  //JSON Node Names
-	  private static final String TAG_OBJETO ="";
+	  private static final String TAG_OBJETO ="in";
 	  private static final String TAG_TITULO = "title";
 	  private static final String TAG_PUNTO = "point";
 	  private static final String TAG_LINK = "link";
@@ -51,9 +52,12 @@ public class MainActivity extends Activity {
 	      @Override
 	        protected void onPreExecute() {
 	            super.onPreExecute();
+	            
+//		         Toast.makeText(getApplicationContext()," Guardado!", Toast.LENGTH_SHORT).show();
+
 	             titulors = (TextView)findViewById(R.id.titulo);
 	             puntors = (TextView)findViewById(R.id.puntos);
-	             imageners = (ImageView)findViewById(R.id.imagen);
+	             imageners = (ImageView)findViewById(R.id.imagen); 
 	             
 	            pDialog = new ProgressDialog(MainActivity.this);
 	            pDialog.setMessage("Getting Data ...");
@@ -71,6 +75,8 @@ public class MainActivity extends Activity {
 	       @Override
 	         protected void onPostExecute(JSONObject json) {
 	         pDialog.dismiss();
+	         //Toast.makeText(getApplicationContext()," Guardado!", Toast.LENGTH_SHORT).show();
+	        
 	         try {
 	            // Getting JSON Array
 	            post = json.getJSONArray(TAG_OBJETO);
@@ -84,7 +90,7 @@ public class MainActivity extends Activity {
 	            //Set JSON Data in TextView
 	            titulors.setText(titulo);
 	            puntors.setText(punto);
-	            linksors.setText(link);
+	           // linksors.setText(link);
 	            //imageners.setIma??
 	        } catch (JSONException e) {
 	          e.printStackTrace();
